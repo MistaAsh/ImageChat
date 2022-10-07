@@ -35,7 +35,7 @@ function WebCamera() {
       />
 
       <RadioButtonUncheckedIcon
-        className = "camera_button"
+        className = "camera-button"
         onClick = {capture}
       />
     </div>
