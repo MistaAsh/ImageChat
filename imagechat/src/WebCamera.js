@@ -20,7 +20,7 @@ function WebCamera() {
   const capture = useCallback(() => {
     const imageSrc = camRef.current.getScreenshot();
     dispatch(setCameraImage(imageSrc));
-    navigate.push('/preview');
+    navigate('/preview');
   }, [camRef]);
 
   return (
@@ -35,9 +35,8 @@ function WebCamera() {
       />
 
       <RadioButtonUncheckedIcon
-        className = "camera-button"
+        className = "camera_button"
         onClick = {capture}
-        fontsize = "large"
       />
     </div>
   );

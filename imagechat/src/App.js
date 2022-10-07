@@ -10,8 +10,8 @@ function App() {
       <BrowserRouter>
         <div className = "app_body">
           <Routes>
-            <Route path="/" exact element={ <WebCamera /> } />
-            <Route path="/preview" exact element={ <Preview /> } />
+            <Route path="/" element={ <WebCamera /> } />
+            <Route path="/preview" element={ <Preview /> } />
           </Routes>
         </div>
       </BrowserRouter>
