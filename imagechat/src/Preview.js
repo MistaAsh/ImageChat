@@ -19,11 +19,14 @@ import SendIcon from '@mui/icons-material/Send';
 import './Preview.css';
 import { db, storage } from './firebase';
 import { selectCameraImage, resetCameraImage } from './features/cameraSlice';
+import { selectUser } from './features/appSlice';
 
 function Preview() {
   const cameraImage = useSelector(selectCameraImage);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const user = useSelector(selectUser)
 
   useEffect(() => {
     if (!cameraImage) {
@@ -50,6 +53,7 @@ function Preview() {
             imageURL: url,
             username: 'Test',
             isRead: false,
+            profilePic: user.profilePic,
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
           });
           navigate('/chats', { replace: true });

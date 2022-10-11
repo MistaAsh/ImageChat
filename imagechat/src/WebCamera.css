@@ -4,9 +4,12 @@
 
 .camera-button {
     position: absolute;
+    background-color: white;
+    border-radius: 200px;
+    color: grey;
+    font-size: 40px !important;
+    cursor: pointer;
     bottom: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-    color: white;
+    transform: translateX(-50%);
 }

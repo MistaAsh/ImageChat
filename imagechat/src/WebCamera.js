@@ -1,8 +1,9 @@
 import React, { useCallback } from 'react';
 import Webcam from "react-webcam";
-import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+
+import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 
 import { setCameraImage } from './features/cameraSlice';
 
@@ -34,9 +35,10 @@ function WebCamera() {
         videoConstraints = {videoConstraints}
       />
 
-      <RadioButtonUncheckedIcon
+      <RadioButtonUncheckedIcon 
         className = "camera-button"
         onClick = {capture}
+        fontSize = "large"
       />
     </div>
   );
