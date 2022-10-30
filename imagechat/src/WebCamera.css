@@ -2,14 +2,81 @@
     position: relative;
 }
 
-.camera-button {
+.camera-header {
     position: absolute;
-    background-color: transparent;
-    border-radius: 200px;
-    color: grey;
-    font-size: 40px !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    top: 1px;
+    height: 50px;    
+}
+
+.camera-avatar {
     cursor: pointer;
-    bottom: 0;
+    height: 30px !important;
+    width: 30px !important;
+}
+
+.camera-search {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    flex: 1;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding-left: 4px;
+    padding-right: 4px;
+    height: 20px;
+    width: 150px;
+    box-shadow: 1px -7px 7px -6px rgba(0, 0, 0, 0.44);
+    border-radius: 10px;
+}
+
+.camera-searchicon {
+    font-size: 13px !important;
+}
+
+.camera-search > input {
+    outline: none;
+    background-color: transparent;
+    border: none;
+    font-size: 10px;
+    font-family: "Work Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    width: 25px;
+    flex: 1;
+}
+
+.camera-search > input::placeholder {
+    color: white;
+    opacity: 100;
+}
+
+.camera-addicon {
+    font-size: 12px !important;
+}
+
+.camera-flipicon {
+    color: white;
+}
+
+.camera-footer {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 50px !important;
+    bottom: 5px;
+    width: 150px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); 
+}
+
+.camera-button {
+    font-size: 50px !important;
+    cursor: pointer;
 }

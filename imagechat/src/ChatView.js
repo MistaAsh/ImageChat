@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
@@ -9,6 +9,19 @@ import { selectSelectedImage } from "./features/appSlice";
 function ChatView() {
   const selectedImage = useSelector(selectSelectedImage);
   const navigate = useNavigate();
+
+  const [loaded, setLoaded] = useState(false);
+  const ref = useRef();
+
+  const onLoad = () => {
+    setLoaded(true);
+  }
+
+  useEffect(() => {
+    if (ref.current && ref.current.complete) {
+      onLoad();
+    }
+  });
 
   useEffect(() => {
     if (!selectedImage) {
@@ -22,13 +35,14 @@ function ChatView() {
 
   return (
     <div className = "chatview">
-      <img src = {selectedImage} onClick = {exit} alt = "" />
+      <img ref={ref} onLoad={onLoad} src={selectedImage} onClick={exit} alt = "" />
+      { loaded ?
       <div className = "chatview-timer">
         <CountdownCircleTimer
           isPlaying
           duration = {10}
-          strokeWidth = {6}
-          size = {50}
+          strokeWidth = {4}
+          size = {40}
           colors = {["#004777", "#F7B801", "#A30000", "#A30000"]}
           colorsTime = {[10, 6, 3, 0]}
         >
@@ -39,7 +53,9 @@ function ChatView() {
             return remainingTime;
           }}
         </CountdownCircleTimer>
-      </div>
+      </div> : <div>
+        <h1>Loading...</h1>
+        </div> }
     </div>
   );
 }
