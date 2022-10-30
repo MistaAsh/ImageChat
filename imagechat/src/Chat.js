@@ -10,7 +10,7 @@ import { selectImage } from "./features/appSlice";
 import { db } from "./firebase";
 import { useNavigate } from "react-router";
 
-function Chat({ id, imageURL, isRead, profilePic, timestamp, username }) {
+function Chat({ id, imageURL, isRead, profilePic, timestamp, to, username }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -25,7 +25,7 @@ function Chat({ id, imageURL, isRead, profilePic, timestamp, username }) {
     }
   };
 
-  return (
+  return (timestamp ?
     <div onClick = {open} className = "chat">
       <Avatar src = {profilePic} className = "chat-avatar" />
       <div className = "chat-details">
@@ -34,7 +34,7 @@ function Chat({ id, imageURL, isRead, profilePic, timestamp, username }) {
       </div>
       {!isRead && <StopRoundedIcon className = "chat-readicon" />}
     </div>
-  );
+  : <div></div>);
 }
 
 export default Chat;

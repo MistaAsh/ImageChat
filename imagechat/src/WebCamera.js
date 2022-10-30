@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 
+import './WebCamera.css';
 import { setCameraImage } from './features/cameraSlice';
 
 const videoConstraints = {
@@ -27,7 +28,7 @@ function WebCamera() {
   return (
     <div className = "camera">
       <Webcam 
-        audio = {false}
+        audio = {false} 
         width = {videoConstraints.width}
         height = {videoConstraints.height}
         ref = {camRef}
