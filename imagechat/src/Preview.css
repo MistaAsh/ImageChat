@@ -7,7 +7,7 @@
     top: 0;
     margin: 5px;
     cursor: pointer;
-    color: black;
+    color: white;
 }
 
 .preview-toolbar-right {
@@ -16,7 +16,7 @@
     flex-direction: column;
     right: 0;
     margin: 5px;
-    color: black;
+    color: white;
 }
 
 .preview-toolbar-right > .MuiSvgIcon-root {

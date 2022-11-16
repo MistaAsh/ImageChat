@@ -8,15 +8,15 @@
 
 .login-container {
     display: flex;
-    flex-direction: column;
-}
-
-.login-container > img {
-    height: 300px;
-    object-fit: contain;
-}
-
-.login-container > Button {
+    flex-direction: row;
+    border-style: solid;
     border-color: black;
-    color: black;
+    padding: 8px;
+    border-radius: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.login-container > p {
+    padding-left: 8px;
 }

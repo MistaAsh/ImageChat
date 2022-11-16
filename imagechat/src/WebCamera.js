@@ -38,6 +38,10 @@ function WebCamera() {
     navigate('/chats');
   };
 
+  const openInNewTab = url => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <div className = "camera">
       <Webcam 
@@ -72,7 +76,7 @@ function WebCamera() {
           onClick = {capture}
           fontSize = "large"
         />
-        <DuoIcon className = "camera-videoicon" />
+        <DuoIcon className = "camera-videoicon" onClick={()=> window.open("./ar.html", "_blank")} />
       </div>
     </div>
   );
